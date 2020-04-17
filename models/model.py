@@ -24,3 +24,7 @@ clf = Pipeline(steps=[
     ('scaler', StandardScaler(with_mean=False)),
     ('lr', LogisticRegression())
 ])
+
+# Train model
+
+clf.fit(X_train, y_train)
