@@ -10,7 +10,17 @@ from sklearn.linear_model import LogisticRegression
 
 df = pd.read_csv('models/saved/dataframe.csv')
 
+# Split training/test sets
+
 X = df['message']
 y = df['label']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+# Build classifier model
+
+clf = Pipeline(steps=[
+    ('tfidf', TfidfVectorizer()),
+    ('scaler', StandardScaler(with_mean=False)),
+    ('lr', LogisticRegression())
+])
