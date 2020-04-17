@@ -1,6 +1,9 @@
 from flask import Flask, render_template, request
+import joblib
 
 app = Flask(__name__)
+
+model = joblib.load('models/saved/model.joblib')
 
 @app.route('/')
 def main():
