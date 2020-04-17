@@ -10,14 +10,14 @@ from sklearn.linear_model import LogisticRegression
 
 df = pd.read_csv('models/saved/dataframe.csv', encoding = "ISO-8859-1")
 
-# Split training/test sets
+# Splits training/test sets
 
 X = df['message']
 y = df['label']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
-# Build classifier
+# Builds classifier
 
 clf = Pipeline(steps=[
     ('tfidf', TfidfVectorizer()),
@@ -25,6 +25,13 @@ clf = Pipeline(steps=[
     ('lr', LogisticRegression())
 ])
 
-# Train model
+# Trains model
 
 clf.fit(X_train, y_train)
+
+# Evaluates model
+
+predictions = clf.predict(X_test)
+accuracy = metrics.accuracy_score(y_test, predictions)
+print(f"Logistic Regression Model Accuracy: {(accuracy * 100).round(2)}%")
+
