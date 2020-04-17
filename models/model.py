@@ -17,7 +17,7 @@ y = df['label']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
-# Builds classifier
+# Builds model
 
 clf = Pipeline(steps=[
     ('tfidf', TfidfVectorizer()),
@@ -34,4 +34,8 @@ clf.fit(X_train, y_train)
 predictions = clf.predict(X_test)
 accuracy = metrics.accuracy_score(y_test, predictions)
 print(f"Logistic Regression Model Accuracy: {(accuracy * 100).round(2)}%")
+
+# Saves model
+
+joblib.dump(clf, 'models/saved/model.joblib')
 
