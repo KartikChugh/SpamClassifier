@@ -4,6 +4,7 @@ import joblib
 app = Flask(__name__)
 
 model = joblib.load('models/saved/model.joblib')
+encoder = joblib.load('models/saved/encoder.joblib')
 
 @app.route('/')
 def main():
@@ -13,7 +14,10 @@ def main():
 def classify():
     if request.method == "POST":
         message = request.form['submission']
-        return render_template('index.html', message=message)
+        prediction = model.predict([message])
+        classification = encoder.inverse_transform(prediction)
+
+        return render_template('index.html', message=message, classification=classification)
 
 if __name__ == "__main__":
     app.run(debug=True)
