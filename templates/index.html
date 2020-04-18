@@ -6,5 +6,11 @@
     <textarea class="form-control" name="submission" id="submission" rows="10"></textarea> 
     <button type="submit" class="btn btn-primary">Classify</button>
 </form>
-{{classification}}
+{% if classification %}
+{% if classification == 'ham' %}
+<p>Not Spam!</p>
+{% else %}
+<p>Spam!</p>
+{% endif %}
+{% endif %}
 {% endblock %}
