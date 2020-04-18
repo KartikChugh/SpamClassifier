@@ -17,7 +17,7 @@ def classify():
         prediction = model.predict([message])
         classification = encoder.inverse_transform(prediction)
 
-        return render_template('index.html', message=message, classification=classification)
+        return render_template('index.html', message=message, classification=classification[0])
 
 if __name__ == "__main__":
     app.run(debug=True)

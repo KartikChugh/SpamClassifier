@@ -8,9 +8,31 @@
 </form>
 {% if classification %}
 {% if classification == 'ham' %}
-<p>Not Spam!</p>
+<div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header text-white bg-success">
+      <strong class="mr-auto">Classification</strong>
+      <small>Just Now</small>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="toast-body">
+      Message is safe!
+    </div>
+  </div>
 {% else %}
-<p>Spam!</p>
+<div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header text-white bg-danger">
+      <strong class="mr-auto">Classification</strong>
+      <small>Just Now</small>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="toast-body">
+      Message is spam!
+    </div>
+  </div>
 {% endif %}
 {% endif %}
 {% endblock %}
