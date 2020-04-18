@@ -25,3 +25,6 @@ To run the app, complete the following steps:
 5. Run the `models/save_df.py` file. This will save the cleaned dataframe as a csv under the `models/saved` directory.
 6. Run the `models/model.py` file. This will build the model and save it as a `.joblib` file under the `models/saved` directory. 
 7. Run the `server.py` file. Make sure that the `saved/` directory contains both the `dataframe.csv` and `model.joblib` files.
+
+## More Info
+To learn how to build your own spam classifier, refer to the [MLC@UVA tutorial](https://github.com/dylankfernandes/spam-classifier/blob/hosting/hosting.md)
