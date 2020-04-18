@@ -1,7 +1,7 @@
 # Spam Classification App
 Built with [Flask](https://flask.palletsprojects.com/), powered by [Scikit-Learn](https://scikit-learn.org/), and styled via [Bootstrap](https://getbootstrap.com/).
 
-[example screenshot](screenshot.PNG)
+![example screenshot](screenshot.PNG)
 
 ## Prerequisites
 Make sure that you have the following:
