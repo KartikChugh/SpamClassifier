@@ -2,10 +2,7 @@
 {% block content %}
 <h1>Spam Classifier</h1>
 <p>Enter your message below</p>
-<form class="form-group" action="/predict" method="POST">
-    <textarea class="form-control" name="submission" id="submission" rows="10"></textarea> 
-    <button type="submit" class="btn btn-primary">Classify</button>
-</form>
+
 {% if classification %}
 {% if classification == 'ham' %}
 <div class="alert alert-dismissible alert-danger">
@@ -19,4 +16,10 @@
   </div>
 {% endif %}
 {% endif %}
+
+
+<form class="form-group" action="/predict" method="POST">
+    <textarea class="form-control" name="submission" id="submission" rows="10"></textarea> 
+    <button type="submit" class="btn btn-primary">Classify</button>
+</form>
 {% endblock %}
