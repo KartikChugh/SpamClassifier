@@ -11,7 +11,7 @@ def main():
     return render_template("index.html")
 
 @app.route('/predict', methods=["POST"])
-def classify():
+def predict():
     if request.method == "POST":
         message = request.form['submission']
         prediction = model.predict([message])

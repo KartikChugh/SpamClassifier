@@ -18,7 +18,7 @@
 {% endif %}
 
 
-<form class="form-group" action="/predict" method="POST">
+<form class="form-group" action="{{ url_for('predict') }}" method="POST">
     <textarea class="form-control" name="submission" id="submission" rows="10"></textarea> 
     <button type="submit" class="btn btn-primary">Classify</button>
 </form>
