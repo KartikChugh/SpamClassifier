@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 import joblib
 
 app = Flask(__name__)
+app.config['FREEZER_RELATIVE_URLS'] = True
 
 model = joblib.load('models/saved/model.joblib')
 encoder = joblib.load('models/saved/encoder.joblib')
