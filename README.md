@@ -1,5 +1,5 @@
 # Spam Classification App
-Built with [Flask](https://flask.palletsprojects.com/), powered by [Scikit-Learn](https://scikit-learn.org/), and styled via [Bootstrap](https://getbootstrap.com/).
+Built with [Flask](https://flask.palletsprojects.com/), powered by [Scikit-Learn](https://scikit-learn.org/), styled via [Bootstrap](https://getbootstrap.com/), and deployed through [Heroku](https://ml-spam-classifier.herokuapp.com/).
 
 Spam Classifier uses a logistic regression model to classify messages (preferably SMS) as spam or not spam with 98.21% accuracy.
 
